@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.*;
 import android.widget.*;
 
@@ -26,24 +28,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         oTView1 = (TextView) findViewById(R.id.result);
 
         oButton.setOnClickListener(this);
+        oTEdit2.addTextChangedListener(
+                new TextWatcher() {
+                    @Override
+                    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable editable) {
+                        soma(oTEdit1.getText().toString(),oTEdit2.getText().toString());
+                    }
+                }
+        );
     }
 
     @Override
-    public void onClick(View view){
+    public void onClick(View view) {
         int id = view.getId();
 
-        if(id == R.id.sum){
-            try {
-                double n1 = Double.parseDouble(oTEdit1.getText().toString());
-                double n2 = Double.parseDouble(oTEdit2.getText().toString());
-                oTView1.setText("Result-> "+String.valueOf(soma(n1, n2)));
-            }catch (Exception e){
-                oTView1.setText("Ocorreu um erro!");
-            }
+        if (id == R.id.sum) {
+            soma(oTEdit1.getText().toString(),oTEdit2.getText().toString());
         }
     }
 
-    public double soma(double d1, double d2){
-        return d1 + d2;
+    public void soma(String d1, String d2){
+        try {
+            double n1 = Double.parseDouble(d1);
+            double n2 = Double.parseDouble(d2);
+            oTView1.setText("Result-> " + String.valueOf(n1 + n2));
+        } catch (Exception e) {
+            oTView1.setText("Ocorreu um erro!");
+        }
     }
 }

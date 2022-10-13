@@ -21,8 +21,8 @@
 
     <EditText
         android:id="@+id/number1"
-        android:layout_width="366dp"
-        android:layout_height="50dp"
+        android:layout_width="279dp"
+        android:layout_height="52dp"
         android:inputType="numberDecimal|numberSigned"
         android:text="0"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -34,8 +34,8 @@
 
     <EditText
         android:id="@+id/number2"
-        android:layout_width="366dp"
-        android:layout_height="50dp"
+        android:layout_width="279dp"
+        android:layout_height="52dp"
         android:inputType="numberDecimal|numberSigned"
         android:text="0"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -46,8 +46,8 @@
 
     <Button
         android:id="@+id/sum"
-        android:layout_width="366dp"
-        android:layout_height="50dp"
+        android:layout_width="177dp"
+        android:layout_height="46dp"
         android:text="+"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
